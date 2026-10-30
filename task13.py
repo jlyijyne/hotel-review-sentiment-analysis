@@ -10,7 +10,7 @@ df["overall"] = pd.to_numeric(df["overall"], errors="coerce")
 # Case A: High rating but very negative sentiment
 case_a = df[
     (df["rating"] >= 4) &
-    (df["overall"] <= -3)
+    (df["overall"] <= -2)
 ].copy()
 
 case_a["bias_type"] = "High rating, negative sentiment"
@@ -18,7 +18,7 @@ case_a["bias_type"] = "High rating, negative sentiment"
 # Case B: Low rating but very positive sentiment
 case_b = df[
     (df["rating"] <= 2) &
-    (df["overall"] >= 3)
+    (df["overall"] >= 2)
 ].copy()
 
 case_b["bias_type"] = "Low rating, positive sentiment"
